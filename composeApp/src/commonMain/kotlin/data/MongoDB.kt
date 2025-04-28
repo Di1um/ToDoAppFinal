@@ -82,10 +82,7 @@ class MongoDB {
     suspend fun setFavorite(task: ToDoTask, isFavorite: Boolean) {
         realm?.write {
             try {
-                val queriedTask = query<ToDoTask>(query = "_id == $0", task._id)
-                    .find()
-                    .first()
-                queriedTask.apply { favorite = isFavorite }
+
             } catch (e: Exception) {
                 println(e)
             }
